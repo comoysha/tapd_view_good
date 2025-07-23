@@ -9,20 +9,28 @@
 @-moz-document url-prefix("https://www.tapd.cn/tapd_fe/") {
 
     :root{
-      --tapd-leftnav: 60px;   /* 实际测量可改 */
+      --tapd-leftnav: 0px;   /* 实际测量可改 */
       --toc-width: 240px;
       --toc-top: 104px;
-      --toc-adjust: -60px;
+      --toc-adjust: 40px;
         
       --extra-offset: 44px;    /* 滚动锚点再往下的 40px */
       --anchor-offset: calc(var(--extra-offset));
     }
 
+    /* 隐藏多余的留白*/
+    .app,
+    .detail-container-left__scroll-wrapper,
+    .detail-container-content{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
     
+
     /* ① 隐藏顶部导航条、左树、底部评论区，但无法不占空间 */
     .navigation-wrap,
     .left-tree-v2,
-    .comment-create-area {                     /* 包括 .left-tree-v2--cloud / --light / -narrow */
+    .comment-create-area{                     /* 包括 .left-tree-v2--cloud / --light / -narrow */
     display: none !important;
     width: 0 !important;
     height: 0 !important;

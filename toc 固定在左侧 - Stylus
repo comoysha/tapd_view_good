@@ -11,10 +11,18 @@
       --tapd-leftnav: 60px;   /* 实际测量可改 */
       --toc-width: 240px;
       --toc-top: 164px;
-      --toc-adjust: -60px;
+      --toc-adjust: 40px;
         
       --extra-offset: 44px;    /* 滚动锚点再往下的 40px */
       --anchor-offset: calc(var(--extra-offset));
+    }
+    
+    /* 隐藏多余的留白*/
+    .app,
+    .detail-container-left__scroll-wrapper,
+    .detail-container-content{
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     /* 复制对方的选择器，再加一层权重，并用 !important */
