@@ -1,0 +1,42 @@
+/* ==UserStyle==
+@name         TAPD story list – fullscreen content
+@namespace    https://www.tapd.cn/
+@version      1.0.0
+@description  Hide top nav & left tree, make .story-wrap fill the viewport
+@match        https://www.tapd.cn/tapd_fe/22218101/story/list
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.tapd.cn/tapd_fe/") {
+    /* 隐藏多余的留白*/
+    .app,
+    .detail-container-left__scroll-wrapper,
+    .detail-container-content{
+        margin: 0 !important;
+    }
+    
+    .app,
+    .app__content {
+        height: 100% !important;
+    }
+    
+
+    /* ① 隐藏顶部导航条、左树、底部评论区，但无法不占空间 */
+    .navigation-wrap,
+    .left-tree-v2,
+    .comment-create-area{                     /* 包括 .left-tree-v2--cloud / --light / -narrow */
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+    /* 隐藏右侧 detail 面板（不占宽高） */
+    .detail-container-right {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
