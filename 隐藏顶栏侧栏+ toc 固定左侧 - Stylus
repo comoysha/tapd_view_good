@@ -9,10 +9,11 @@
 @-moz-document url-prefix("https://www.tapd.cn/tapd_fe/") {
 
     :root{
-      --tapd-leftnav: 90px;   /* 实际测量可改 */
+      --tapd-leftnav: 60px;   /* 实际测量可改 */
       --toc-width: 240px;
       --toc-top: 104px;
-          
+      --toc-adjust: -60px;
+        
       --extra-offset: 44px;    /* 滚动锚点再往下的 40px */
       --anchor-offset: calc(var(--extra-offset));
     }
@@ -54,8 +55,8 @@
     }
 
     /* 主文档整体右移 */
-    .detail-item__content-wrapper{
-      margin-left: calc(var(--tapd-leftnav) + var(--toc-width)) !important;
+    .detail-container-left{
+      margin-left: calc(var(--tapd-leftnav) + var(--toc-width) + var(--toc-adjust)) !important;
     }
     
 
