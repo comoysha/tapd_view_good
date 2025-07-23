@@ -1,0 +1,47 @@
+/* ==UserStyle==
+@name           www.tapd.cn/tapd_fe/22218101/story/detail/1122218101001041420
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.tapd.cn/tapd_fe/") {
+    :root{
+      --tapd-leftnav: 90px;   /* 实际测量可改 */
+      --toc-width: 240px;
+      --toc-top: 164px;
+        
+      --extra-offset: 44px;    /* 滚动锚点再往下的 40px */
+      --anchor-offset: calc(var(--extra-offset));
+    }
+
+    /* 复制对方的选择器，再加一层权重，并用 !important */
+    .cherry-editor-content .toc{
+      position: fixed !important;
+      left: var(--tapd-leftnav) !important;
+      top: var(--toc-top) !important;
+      width: var(--toc-width) !important;
+      max-height: calc(100vh - 80px) !important;
+      overflow: auto !important;
+      background: #fff !important;
+      padding: 10px 14px !important;
+      border-right: 1px solid #ddd !important;
+      z-index: 99999 !important;
+    }
+
+    /* 主文档整体右移 */
+    .detail-item__content-wrapper{
+      margin-left: calc(var(--tapd-leftnav) + var(--toc-width)) !important;
+    }
+    
+
+    /* 删除“目录”那一列字 */
+    .toc .toc-title{display:none!important;}
+
+    /* 所有可被锚点定位的标题 */
+    h1, h2, h3, h4, h5, h6{
+      scroll-margin-top: var(--anchor-offset);
+    }
+    
+}
