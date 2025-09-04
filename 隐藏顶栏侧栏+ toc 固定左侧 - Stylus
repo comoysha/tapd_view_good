@@ -14,7 +14,7 @@
       --toc-top: 104px;
       --toc-adjust: 40px;
         
-      --extra-offset: 44px;    /* 滚动锚点再往下的 40px */
+      --extra-offset: 44px;    /* 滚动锚点再往下的 44px */
       --anchor-offset: calc(var(--extra-offset));
     }
 
@@ -24,6 +24,11 @@
     .detail-container-content{
         margin: 0 !important;
         padding: 0 !important;
+    }
+    
+    .app,
+    .app__content {
+        height: 100% !important;
     }
     
 
@@ -72,7 +77,7 @@
     .toc .toc-title{display:none!important;}
 
 
-    /* 所有可被锚点定位的标题 */
+    /* 所有可被锚点定位的标题向下多滚动一点 */
     h1, h2, h3, h4, h5, h6{
       scroll-margin-top: var(--anchor-offset);
     }
