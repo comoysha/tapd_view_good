@@ -39,13 +39,13 @@
       z-index: 99999 !important;
     }
 
-    /* 主文档整体右移 */
-    .detail-container-left{
+    /* 只有当页面存在 toc 时，主文档才右移 */
+    body:has(.cherry-editor-content .toc) .detail-container-left{
       margin-left: calc(var(--tapd-leftnav) + var(--toc-width) + var(--toc-adjust)) !important;
     }
     
 
-    /* 删除“目录”那一列字 */
+    /* 删除"目录"那一列字 */
     .toc .toc-title{display:none!important;}
 
     /* 所有可被锚点定位的标题 */
